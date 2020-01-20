@@ -1,0 +1,60 @@
+﻿<Window x:Class="WheelRight_Task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WheelRight_Task"
+        mc:Ignorable="d"
+        Title="WheelRight Task - Michael Price" Height="475" Width="800">
+    <Grid>
+        <Button Content="Search" HorizontalAlignment="Left" Height="20" Margin="533,403,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click"/>
+        <TextBox Name="searchBox" HorizontalAlignment="Left" Height="20" Margin="20,403,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="500"/>
+        <TextBlock Name="leftSensorAmbient" HorizontalAlignment="Left" Height="23" Margin="226,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+        <TextBlock Name="rightSensorAmbient" HorizontalAlignment="Left" Height="23" Margin="533,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40"/>
+        <TextBlock Name="leftSensor" HorizontalAlignment="Left" Margin="100,10,0,0" TextWrapping="Wrap" Text="Left Sensor" VerticalAlignment="Top" Height="35" Width="130" FontSize="20"/>
+        <TextBlock Name="rightSensor" HorizontalAlignment="Left" Margin="407,10,0,0" TextWrapping="Wrap" Text="Right Sensor" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="100,45,0,0" TextWrapping="Wrap" Text="Ambient temperature:" VerticalAlignment="Top" Width="121"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="407,45,0,0" TextWrapping="Wrap" Text="Ambient temperature:" VerticalAlignment="Top" Width="121"/>
+        <DataGrid x:Name="leftSensorGrid" HorizontalAlignment="Left" Margin="26,73,0,0" VerticalAlignment="Top" Height="311" Width="275">
+            <!--Font colour / Style-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text and Bindings-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="1"/>
+                <DataGridTextColumn Header=" Sample Size" Binding="{Binding Sample_Size}" Width="*"/>
+                <DataGridTextColumn Header=" Highest Temp" Binding="{Binding Highest_Temp}" Width="*"/>
+                <DataGridTextColumn Header=" Average Temp" Binding="{Binding Average_Temp}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="rightSensorGrid" HorizontalAlignment="Left" Margin="323,73,0,0" VerticalAlignment="Top" Height="311" Width="275">
+            <!--Font colour / Style-->
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="LightBlue"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <!-- Column Header Text and Bindings-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="1"/>
+                <DataGridTextColumn Header=" Sample Size" Binding="{Binding Sample_Size}" Width="*"/>
+                <DataGridTextColumn Header=" Highest Temp" Binding="{Binding Highest_Temp}" Width="*"/>
+                <DataGridTextColumn Header=" Average Temp" Binding="{Binding Average_Temp}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock HorizontalAlignment="Left" Margin="675,197,0,0" TextWrapping="Wrap" Text="Debug:" VerticalAlignment="Top" FontSize="15" FontStyle="Normal"/>
+        <TextBox Name="sensSensivity" HorizontalAlignment="Left" Margin="738,240,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="20" Height="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="634,240,0,0" TextWrapping="Wrap" Text="Sensor Sensitivity:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" Margin="709,261,0,0" TextWrapping="Wrap" Text="(Range 1 - 6)" VerticalAlignment="Top" Width="83"/>
+
+    </Grid>
+</Window>
